@@ -38,6 +38,7 @@
             margin-top: 40px;
             font-family: 'Segoe UI', sans-serif;
             animation: fadeInDown 2s ease-in-out;
+            display: none; 
          }
 
           .love-message br + * {
@@ -60,8 +61,7 @@
          @keyframes glow {
          from { text-shadow: 0 0 5px #ff4d6d; }
          to { text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff99ac; }
-          }
-         }
+          
         }
        .heart {
         position: fixed;
@@ -83,6 +83,9 @@
    }
     </style>
     <script>
+        function showLove()  {
+            document .querySelector(" .love-message").style.display ="block";
+        }
   function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
