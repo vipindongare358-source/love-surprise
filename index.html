@@ -46,43 +46,43 @@
          }
 
          @keyframes fadeInDown {
-    from {
+         from {
          opacity: 0;
          transform: translateY(-40px);
          }
-      to {
+         to {
           opacity: 1;
           transform: translateY(0);
-      }
-    }
+         }
+        }
 
-      @keyframes glow {
-      from { text-shadow: 0 0 5px #ff4d6d; }
-      to { text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff99ac; }
+         @keyframes glow {
+         from { text-shadow: 0 0 5px #ff4d6d; }
+         to { text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff99ac; }
           }
          }
         }
-    .heart {
-  position: fixed;
-  bottom: -10px;
-  font-size: 20px;
-  color: #ff4d6d;
-  animation: floatUp 6s linear infinite;
-}
+       .heart {
+        position: fixed;
+        bottom: -10px;
+        font-size: 20px;
+        color: #ff4d6d;
+        animation: floatUp 6s linear infinite;
+      }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
+      @keyframes floatUp {
+      0% {
+      transform: translateY(0);
+      opacity: 1;
+     }
+     100% {
+     transform: translateY(-100vh);
+     opacity: 0;
+    }
+   }
     </style>
     <script>
-function createHeart() {
+  function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML = "❤️";
