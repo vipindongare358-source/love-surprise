@@ -84,7 +84,7 @@
     </style>
     <script>
         function showLove()  {
-            document .querySelector(".love-message").style.display ="block";
+            document .getElementById(".love-message").style.display ="block";
         }
   function createHeart() {
   const heart = document.createElement("div");
@@ -120,7 +120,7 @@ setInterval(createHeart, 500);
 </div>
 
 <button onclick="showLove()">Click Me ❤️</button>
-<h1 class="love-message">
+<h1 id="loveMessage" class="love-message">
   I Love You So Much ❤️ <br>
   Forever & Always 💍
 </h1>
