@@ -30,8 +30,72 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+         .love-message {
+            text-align: center;
+            font-size: 45px;
+            margin-top: 40px;
+            font-family: 'Segoe UI', sans-serif;
+            animation: fadeInDown 2s ease-in-out;
+         }
+
+          .love-message br + * {
+             font-size: 35px;
+             color: #ff4d6d;
+             animation: glow 2s infinite alternate;
+         }
+
+         @keyframes fadeInDown {
+    from {
+         opacity: 0;
+         transform: translateY(-40px);
+         }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+
+      @keyframes glow {
+      from { text-shadow: 0 0 5px #ff4d6d; }
+      to { text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff99ac; }
+          }
+         }
         }
+    .heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  color: #ff4d6d;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
     </style>
+    <script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
 </head>
 <body>
 
@@ -51,12 +115,11 @@
 </div>
 
 <button onclick="showLove()">Click Me ❤️</button>
+<h1 class="love-message">
+  I Love You So Much ❤️ <br>
+  Forever & Always 💍
+</h1>
 
-<script>
-function showLove() {
-    alert("I Love You So Much ❤️ Forever & Always 💍");
-}
-</script>
 
 </body>
 </html>
