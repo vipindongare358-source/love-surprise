@@ -1,130 +1,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For  My  Love ❤️</title>
-    <style>
-        body {
-            background:linear-gradient(to right, #ffe6f0, #fff0f5);
-            font-family: Arial, sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        h1 {
-            color: #ff0066;
-            margin-top: 30px;
-        }
-        .gallery img {
-            width: 200px;
-            margin: 10px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .message {
-            font-size: 20px;
-            color: #cc0066;
-            margin: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #ff3399;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-         .love-message {
-            text-align: center;
-            font-size: 45px;
-            margin-top: 40px;
-            font-family: 'Segoe UI', sans-serif;
-            animation: fadeInDown 2s ease-in-out;
-            display: none; 
-         }
+<title>Happy Birthday My Love ❤️</title>
 
-          .love-message br + * {
-             font-size: 35px;
-             color: #ff4d6d;
-             animation: glow 2s infinite alternate;
-         }
-
-         @keyframes fadeInDown {
-         from {
-         opacity: 0;
-         transform: translateY(-40px);
-         }
-         to {
-          opacity: 1;
-          transform: translateY(0);
-         }
-        }
-
-         @keyframes glow {
-         from { text-shadow: 0 0 5px #ff4d6d; }
-         to { text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff99ac; }
-          
-        }
-       .heart {
-        position: fixed;
-        bottom: -10px;
-        font-size: 20px;
-        color: #ff4d6d;
-        animation: floatUp 6s linear infinite;
-      }
-
-      @keyframes floatUp {
-      0% {
-      transform: translateY(0);
-      opacity: 1;
-     }
-     100% {
-     transform: translateY(-100vh);
-     opacity: 0;
-    }
-   }
-    </style>
-    <script>
-        function showLove()  {
-            document .getElementById(".love-message").style.display ="block";
-        }
-  function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffe6f0, #fff0f5);
+    text-align: center;
+    overflow-x: hidden;
 }
 
-setInterval(createHeart, 500);
-</script>
+.section {
+    display: none;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.active {
+    display: block;
+}
+
+h1 {
+    color: #ff0066;
+}
+
+.typewriter {
+    font-size: 20px;
+    color: #cc0066;
+    width: 80%;
+    margin: auto;
+    min-height: 80px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background: #ff3399;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px;
+    position: relative;
+}
+
+.gallery img {
+    width: 170px;
+    margin: 8px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff4d6d;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
 </head>
+
 <body>
 
-<h1>My Beautiful Surprise ❤️</h1>
+<audio id="bgMusic" loop>
+    <source src="tere-naina.mp3" type="audio/mpeg">
+</audio>
 
-<div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
-    <img src="photo4.jpg">
-    <img src="photo5.jpg">
+<!-- PAGE 1 -->
+<div id="page1" class="section active">
+    <h1>Happy Birthday 🎂❤️</h1>
+    <div id="msg1" class="typewriter"></div>
+    <button onclick="goToPage(2)">Open Your Surprise 💖</button>
 </div>
 
-<div class="message">
-    You are the best thing that ever happened to me 💖  
-    Every moment with you is special ❤️
+<!-- PAGE 2 -->
+<div id="page2" class="section">
+    <h1>For My Forever ❤️</h1>
+    <div id="msg2" class="typewriter"></div>
+
+    <div class="gallery">
+        <img src="photo1.jpg"><img src="photo2.jpg"><img src="photo3.jpg">
+        <img src="photo4.jpg"><img src="photo5.jpg"><img src="photo6.jpg">
+        <img src="photo7.jpg"><img src="photo8.jpg"><img src="photo9.jpg">
+        <img src="photo10.jpg">
+    </div>
+
+    <h2>Will You Stay With Me Forever? 💍</h2>
+    <button onclick="goToPage(3)">Yes 😍</button>
+    <button id="noBtn">No 😜</button>
 </div>
 
-<button onclick="showLove()">Click Me ❤️</button>
-<h1 id="loveMessage" class="love-message">
-  I Love You So Much ❤️ <br>
-  Forever & Always 💍
-</h1>
+<!-- PAGE 3 -->
+<div id="page3" class="section">
+    <h1>My Final Promise ❤️</h1>
+    <div id="msg3" class="typewriter"></div>
 
+    <div class="gallery">
+        <img src="photo11.jpg"><img src="photo12.jpg"><img src="photo13.jpg">
+        <img src="photo14.jpg"><img src="photo15.jpg"><img src="photo16.jpg">
+        <img src="photo17.jpg"><img src="photo18.jpg"><img src="photo19.jpg">
+        <img src="photo20.jpg">
+    </div>
+</div>
+
+<script>
+const messages = {
+    msg1: "PAGE1_MESSAGE",
+    msg2: "PAGE2_MESSAGE",
+    msg3: "PAGE3_MESSAGE"
+};
+
+function typeWriter(elementId, text, speed = 40) {
+    let i = 0;
+    const element = document.getElementById(elementId);
+    element.innerHTML = "";
+
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+    typing();
+}
+
+function goToPage(pageNumber) {
+    document.getElementById("bgMusic").play();
+
+    document.querySelectorAll(".section").forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById("page" + pageNumber).classList.add("active");
+
+    typeWriter("msg" + pageNumber, messages["msg" + pageNumber]);
+}
+
+/* Moving NO button */
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", function() {
+    const x = Math.random() * window.innerWidth * 0.7;
+    const y = Math.random() * window.innerHeight * 0.7;
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+window.onload = function() {
+    setInterval(createHeart, 500);
+    typeWriter("msg1", messages.msg1);
+};
+</script>
 
 </body>
 </html>
+          
