@@ -96,7 +96,7 @@ button {
     </div>
 
     <h2>Will You Stay With Me Forever? 💍</h2>
-    <button onclick="goToPage(3)">Yes 😍</button>
+    <button onclick="yesClicked()">Yes 😍</button>
     <button id="noBtn">No 😜</button>
 </div>
 
@@ -170,7 +170,29 @@ function createHeart() {
         heart.remove();
     }, 6000);
 }
+function yesClicked() {
 
+    // Big Heart Animation
+    const bigHeart = document.createElement("div");
+    bigHeart.innerHTML = "❤️";
+    bigHeart.style.position = "fixed";
+    bigHeart.style.fontSize = "200px";
+    bigHeart.style.top = "50%";
+    bigHeart.style.left = "50%";
+    bigHeart.style.transform = "translate(-50%, -50%) scale(0)";
+    bigHeart.style.transition = "0.6s";
+    document.body.appendChild(bigHeart);
+
+    setTimeout(() => {
+        bigHeart.style.transform = "translate(-50%, -50%) scale(1.5)";
+    }, 50);
+
+    setTimeout(() => {
+        bigHeart.remove();
+        goToPage(3);
+        startFireworks();
+    }, 800);
+}
 window.onload = function() {
     setInterval(createHeart, 500);
     typeWriter("msg1", messages.msg1);
