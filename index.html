@@ -174,6 +174,12 @@ function createHeart() {
 window.onload = function() {
     setInterval(createHeart, 500);
     typeWriter("msg1", messages.msg1);
+    //Birthday Confetti
+    confetti({
+        particleCount: 150,
+        spread: 90;
+    origin: { y: 0.6 }
+});
 };
 </script>
 
