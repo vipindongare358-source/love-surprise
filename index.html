@@ -145,6 +145,10 @@ function goToPage(pageNumber) {
     document.getElementById("page" + pageNumber).classList.add("active");
 
     typeWriter("msg" + pageNumber, messages["msg" + pageNumber]);
+    //Fireworks on page 2
+    if (pageNumber === 2){
+        start fireworks();
+    }
 }
 
 /* Moving NO button */
@@ -190,7 +194,6 @@ function yesClicked() {
     setTimeout(() => {
         bigHeart.remove();
         goToPage(3);
-        startFireworks();
     }, 800);
 }
     function startFireworks() {
