@@ -16,8 +16,15 @@ body {
     display: none;
     padding: 40px 20px;
     min-height: 100vh;
+    position: relative;
 }
-
+#photo-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 .active {
     display: block;
 }
@@ -88,6 +95,7 @@ button {
 </head>
 
 <body>
+<div id="photo-container"></div>
 
 <audio id="bgMusic" loop>
     <source src="audio mp3" type="audio/mpeg">
@@ -242,18 +250,26 @@ window.onload = function() {
     origin: { y: 0.6 }
 });
 };
-function scatterPhotos(pageNumber, imageStart, imageEnd) {
-    const container = document.getElementById("photo-container");
-    container.innerHTML = "";
 
-    for (let i = imageStart; i <= imageEnd; i++) {
-        const img = document.createElement("img");
-        img.src = "images/photo" + i + ".jpg"; // your image path
-        img.classList.add("random-photo");
+function scatterPhotos(pageNumber, start, end) {
+  const container = document.getElementById("photo-container");
+    container.innerHTML = ""; // clear old photos
 
-        img.style.top = Math.random() * 80 + "%";
-        img.style.left = Math.random() * 80 + "%";
-        img.style.transform = "rotate(" + (Math.random() * 40 - 20) + "deg)";
+    for (let i = start; i <= end; i++) {
+
+        let img = document.createElement("img");
+        img.src = "photo" + i + ".jpg";
+
+        img.style.position = "absolute";
+        img.style.width = "140px";
+        img.style.borderRadius = "15px";
+        img.style.boxShadow = "0 10px 20px rgba(0,0,0,0.3)";
+
+        img.style.top = Math.random() * 75 + "%";
+        img.style.left = Math.random() * 75 + "%";
+
+        img.style.transform =
+            "rotate(" + (Math.random() * 40 - 20) + "deg)";
 
         container.appendChild(img);
     }
