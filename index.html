@@ -69,7 +69,6 @@ button {
     box-shadow: 0 8px 25px rgba(255, 0, 102, 0.5);
 }
 
-/* Floating Hearts */
 .heart {
     position: fixed;
     bottom: -10px;
@@ -104,7 +103,6 @@ button {
     </div>
 
     <button onclick="goToPage(2)">Open Your Surprise 💖</button>
-    <button onclick="document.getElementById('bgMusic').play()">Test Music</button>
 </div>
 
 <!-- PAGE 2 -->
@@ -161,15 +159,11 @@ function typeWriter(elementId, text, speed = 40) {
 }
 
 function goToPage(pageNumber) {
-    const music = document.getElementById("bgMusic");
 
-function startMusicOnce() {
+    const music = document.getElementById("bgMusic");
     music.volume = 0.6;
     music.play().catch(() => {});
-    document.removeEventListener("click", startMusicOnce);
-}
 
-document.addEventListener("click", startMusicOnce);
     document.querySelectorAll(".section").forEach(section => {
         section.classList.remove("active");
     });
@@ -209,18 +203,8 @@ function startFireworks() {
     let animationEnd = Date.now() + duration;
 
     (function frame() {
-        confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 }
-        });
-        confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 }
-        });
+        confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
 
         if (Date.now() < animationEnd) {
             requestAnimationFrame(frame);
@@ -228,7 +212,6 @@ function startFireworks() {
     })();
 }
 
-/* Everything loads safely */
 document.addEventListener("DOMContentLoaded", function() {
 
     typeWriter("msg1", messages.msg1);
