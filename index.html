@@ -165,13 +165,15 @@ function goToPage(pageNumber) {
 }
 
 /* Moving NO button */
-const noBtn = document.getElementById("noBtn");
-noBtn.addEventListener("mouseover", function() {
-    const x = Math.random() * window.innerWidth * 0.7;
-    const y = Math.random() * window.innerHeight * 0.7;
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+document.addEventListener("mouseover", function(e) {
+    if (e.target && e.target.id === "noBtn") {
+        const btn = e.target;
+        const x = Math.random() * window.innerWidth * 0.7;
+        const y = Math.random() * window.innerHeight * 0.7;
+        btn.style.position = "absolute";
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+    }
 });
 
 /* Floating hearts */
