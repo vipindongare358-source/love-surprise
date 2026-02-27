@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HAPPY BIRTHDAY MY LOVE🫀</title>
+<title>Happy Birthday My Love🫀 </title>
 
 <style>
 body {
@@ -45,7 +45,6 @@ button {
     margin: 15px;
 }
 
-/* Gallery Style (ALIGNED PHOTOS) */
 .gallery {
     margin-top: 30px;
 }
@@ -57,7 +56,7 @@ button {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Hearts */
+/* Floating Hearts */
 .heart {
     position: fixed;
     bottom: -10px;
@@ -71,7 +70,7 @@ button {
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
@@ -82,7 +81,7 @@ button {
 
 <!-- PAGE 1 -->
 <div id="page1" class="section active">
-    <h1>HAPPY BIRTHDAY MY LOVE🫀..</h1>
+    <h1>Happy Birthday Mera babyyy..</h1>
     <div id="msg1" class="typewriter"></div>
 
     <div class="gallery">
@@ -115,7 +114,7 @@ button {
 <!-- PAGE 3 -->
 <div id="page3" class="section">
     <h1>I Love you babygirlll ❤️</h1>
-    <div id="msg3"  class="typewriter"></div>
+    <div id="msg3" class="typewriter"></div>
 
     <div class="gallery">
         <img src="photo9.jpg">
@@ -128,9 +127,8 @@ button {
 <script>
 const messages = {
     msg1: "mera pyara.. cut..hot..sundar..bachha...muh💋... Happy Birthday PRINCESS😚🎂❤️... ",
-    msg2: "DARM PATNI JII AAPKE LIYE CHHOTASA GIFT .. 
-hope aapke pasand aaye👉👈...",
-    msg3: "mera bachhha..mera babyyy 😚.. jese aapko pta apka or mera jhagda to hote rhega yeh to shayd bhagwan ne hi tay kiya hoga ki yeh doto bina jhgde kese reh rhe or voh bhi bolte honge inke life me jldi se jldi kalesh lao😂..but fir bhi kitna bhi jhgda ho sachhai yeh he babyy muze aapka sath chahiye hmesha or hmesha hi.. jhgde ho rhe he,kalesh ho rha he firbhi isko kbhi bhi mtlb kbhi bhi khudki glti mt smjhna..  yeh bss ho rha he apne sath to yeh kbhi aapki glti nhi thi ... pr haa mera bachha aap compatible partner ka sochna bhi nhi aap... mere liye aapse jyada compatible koi ho bhi skta he kya ..or hone ka .0001% bhi chance hoga n firbhi nhi chahiye muze.. bilkul bhi nhi...muze bss meri Mannati chahiye🤧 bss meri Mannat ..samjhe n.. babyy I love you babyyyy 💋bahot hi jyada.... or firse... HAPPY BIRTHDAY MY LOVE💕...MERA PYARA BACHHA😙... I LOVE YOU♾️..... and I hope kitni bhi difficulties q nah aaye aap hmesha muze hu choose kroge👉👈"
+    msg2: "Ek chotasi koshish aapke liye .. hope aapke pasand aaye👉👈...",
+    msg3: "mera bachhha..mera babyyy 😚.. jese aapko pta apka or mera jhagda to hote rhega yeh to shayd bhagwan ne hi tay kiya hoga ki yeh doto bina jhgde kese reh rhe or voh bhi bolte honge inke life me jldi se jldi kalesh lao😂..but fir bhi kitna bhi jhgda ho sachhai yeh he babyy muze aapka sath chahiye hmesha or hmesha hi.. jhgde ho rhe he,kalesh ho rha he firbhi isko kbhi bhi mtlb kbhi bhi khudki glti mt smjhna..  yeh bss ho rha he apne sath to yeh kbhi aapki glti nhi thi ... pr haa mera bachha aap compatible partner ka sochna bhi nhi aap... mere liye aapse jyada compatible koi ho bhi skta he kya ..or hone ka .0001% bhi chance hoga n firbhi nhi chahiye muze.. bilkul bhi nhi...muze bss meri Mannati chahiye🤧 bss meri Mannat ..samjhe n.. babyy I love you babyyyy 💋bahot hi jyada.... or firse... HAPPY BIRTHDAY MY LOVE💕...MERA PYARA BACHHA😙... I LOVE YOU♾️... And i hope kitni bhi difficulties q nah aaye aap muze hmesha choose kroge👉👈"
 };
 
 function typeWriter(elementId, text, speed = 40) {
@@ -162,32 +160,6 @@ function goToPage(pageNumber) {
     if (pageNumber === 2) {
         startFireworks();
     }
-}
-
-/* Moving NO button */
-document.addEventListener("mouseover", function(e) {
-    if (e.target && e.target.id === "noBtn") {
-        const btn = e.target;
-        const x = Math.random() * window.innerWidth * 0.7;
-        const y = Math.random() * window.innerHeight * 0.7;
-        btn.style.position = "absolute";
-        btn.style.left = x + "px";
-        btn.style.top = y + "px";
-    }
-});
-
-/* Floating hearts */
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 15 + "px";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
 }
 
 function yesClicked() {
@@ -235,18 +207,41 @@ function startFireworks() {
     })();
 }
 
-window.onload = function() {
-    setInterval(createHeart, 500);
+/* Everything loads safely */
+document.addEventListener("DOMContentLoaded", function() {
+
     typeWriter("msg1", messages.msg1);
+    setInterval(createHeart, 500);
+
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", function() {
+        const x = Math.random() * window.innerWidth * 0.7;
+        const y = Math.random() * window.innerHeight * 0.7;
+        noBtn.style.position = "absolute";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
 
     confetti({
         particleCount: 150,
         spread: 90,
         origin: { y: 0.6 }
     });
-};
+});
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
 </script>
 
 </body>
 </html>
-          
