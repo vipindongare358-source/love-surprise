@@ -88,7 +88,7 @@ button {
 
 <body>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="audio">
     <source src="omahi.mp3" type="audio/mpeg">
 </audio>
 
@@ -104,6 +104,7 @@ button {
     </div>
 
     <button onclick="goToPage(2)">Open Your Surprise 💖</button>
+    <button onclick="document.getElementById('bgMusic').play()">Test Music</button>
 </div>
 
 <!-- PAGE 2 -->
@@ -160,7 +161,11 @@ function typeWriter(elementId, text, speed = 40) {
 }
 
 function goToPage(pageNumber) {
-    document.getElementById("bgMusic").play();
+    const music =
+    document.getElementById("bgMusic");
+    music.volume = 0.6;  //softer romantic volume
+    music.play().catch(error =>
+        console.log("Playback blocked:", error));
 
     document.querySelectorAll(".section").forEach(section => {
         section.classList.remove("active");
