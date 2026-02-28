@@ -140,7 +140,8 @@ const messages = {
     msg1: "mera pyara💗.. cut💕..hot🫣..sundar🫠..bachha... Happy Birthday😚🎂❤️....muh💋 ",
     msg2: "you are my girl❤️..my wife👩‍❤️‍👨.. my peace ✌️...my love👩‍❤️‍👨..my world🫶..my everything✌️..ILOVEYOU💖",
     msg3: "mera bachhha..mera babyyy 😚.. jese aapko pta apka or mera jhagda to hote rhega yeh to shayd bhagwan ne hi tay kiya hoga ki yeh doto bina jhgde kese reh rhe or voh bhi bolte honge inke life me jldi se jldi kalesh lao😂..but fir bhi kitna bhi jhgda ho sachhai yeh he babyy muze aapka sath chahiye hmesha or hmesha hi.. jhgde ho rhe he,kalesh ho rha he firbhi isko kbhi bhi mtlb kbhi bhi khudki glti mt smjhna..  yeh bss ho rha he apne sath to yeh kbhi aapki glti nhi thi ... pr haa mera bachha aap compatible partner ka sochna bhi nhi aap... mere liye aapse jyada compatible koi ho bhi skta he kya ..or hone ka .0001% bhi chance hoga n firbhi nhi chahiye muze.. bilkul bhi nhi...muze bss meri Mannati chahiye🤧 bss meri Mannat ..samjhe n.. babyy I love you babyyyy 💋bahot hi jyada.... or firse... HAPPY BIRTHDAY MY LOVE💕...MERA PYARA BACHHA😙... I LOVE YOU♾️... And i hope kitni bhi difficulties q nah aaye aap muze hmesha choose kroge👉👈"
-};
+}; 
+    
 
 function typeWriter(elementId, text, speed = 40) {
     let i = 0;
@@ -156,12 +157,15 @@ function typeWriter(elementId, text, speed = 40) {
     }
     typing();
 }
-
+let musicStarted = false;
 function goToPage(pageNumber) {
 
     const music = document.getElementById("bgMusic");
+    if (!musicStarted) {
     music.volume = 0.6;
-    music.play().catch(() => {});
+    music.play(). 
+        musicStarted = true;
+    }
 
     document.querySelectorAll(".section").forEach(section => {
         section.classList.remove("active");
