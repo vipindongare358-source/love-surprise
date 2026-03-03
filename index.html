@@ -82,10 +82,9 @@ button {
 }
 .letter {
     background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
-background-color: #fffaf0;
-    width: 85%;
+    background-color: #fffaf0;
     background-size: cover;
-    overflow: hidden;
+    width: 85%;
     max-width: 700px;
     margin: 40px auto;
     padding: 40px;
@@ -97,20 +96,28 @@ background-color: #fffaf0;
     line-height: 1.8;
     position: relative;
     transform: rotate(-1deg);
+    overflow: hidden;
 }
+
+/* TEXT ABOVE WATERMARK */
+.letter #msg3 {
+    position: relative;
+    z-index: 2;
+}
+
+/* ROSE WATERMARK */
 .letter::before {
     content: "";
     position: absolute;
-    background: url('https://pngimg.com/uploads/rose/rose_PNG666.png') no-repeat center;
-    background-size: 200px;
-    opacity: 0.08;
     top: 50%;
     left: 50%;
+    width: 250px;
+    height: 250px;
+    background: url('https://pngimg.com/uploads/rose/rose_PNG666.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.08;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    pointer-events: none;
-
+    z-index: 1;
 }
 
 </style>
