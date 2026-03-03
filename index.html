@@ -161,11 +161,22 @@ let musicStarted = false;
 function goToPage(pageNumber) {
 
     const music = document.getElementById("bgMusic");
-    if (!musicStarted) {
+
+if (!musicStarted) {
     music.volume = 0.6;
-    music.play(). 
-        musicStarted = true;
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                musicStarted = true;
+            })
+            .catch(error => {
+                console.log("Autoplay blocked:", error);
+            });
     }
+}
 
     document.querySelectorAll(".section").forEach(section => {
         section.classList.remove("active");
