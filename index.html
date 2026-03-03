@@ -84,6 +84,8 @@ button {
     background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
 background-color: #fffaf0;
     width: 85%;
+    background-size: cover;
+    overflow: hidden;
     max-width: 700px;
     margin: 40px auto;
     padding: 40px;
@@ -97,11 +99,18 @@ background-color: #fffaf0;
     transform: rotate(-1deg);
 }
 .letter::before {
-    content: "💌";
+    content: "";
     position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 40px;
+    background: url('https://pngimg.com/uploads/rose/rose_PNG666.png') no-repeat center;
+    background-size: 200px;
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+}
 }
 }
 </style>
