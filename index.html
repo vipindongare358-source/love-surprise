@@ -115,20 +115,6 @@ letter-spacing: 1px;
     z-index: 2;
 }
 
-.letter::after {
-    content: "";
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Red_rose.svg/512px-Red_rose.svg.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 5;
-}
-
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -175,7 +161,8 @@ letter-spacing: 1px;
 <div id="page3" class="section">
     <h1>I Love you babygirlll ❤️</h1>
     <div class="letter">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Red_rose.svg/512px-Red_rose.svg.png" class="top-rose">
+      <div class="rose-top">🌹</div>
+      
     <div id="msg3"></div>
 </div>
 
