@@ -235,24 +235,49 @@ if (!musicStarted) {
 }
 
 function yesClicked() {
-    const bigHeart = document.createElement("div");
-    bigHeart.innerHTML = "😘";
-    bigHeart.style.position = "fixed";
-    bigHeart.style.fontSize = "200px";
-    bigHeart.style.top = "50%";
-    bigHeart.style.left = "50%";
-    bigHeart.style.transform = "translate(-50%, -50%) scale(0)";
-    bigHeart.style.transition = "0.6s";
-    document.body.appendChild(bigHeart);
+
+    const popup = document.createElement("div");
+    popup.innerHTML = "I knew you would choose me ❤️";
+    
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%) scale(0)";
+    popup.style.fontSize = "40px";
+    popup.style.fontFamily = "Dancing Script";
+    popup.style.color = "#ff0066";
+    popup.style.background = "white";
+    popup.style.padding = "30px 40px";
+    popup.style.borderRadius = "20px";
+    popup.style.boxShadow = "0 10px 40px rgba(0,0,0,0.3)";
+    popup.style.transition = "0.6s";
+    popup.style.zIndex = "999";
+
+    document.body.appendChild(popup);
 
     setTimeout(() => {
-        bigHeart.style.transform = "translate(-50%, -50%) scale(1.5)";
-    }, 50);
+        popup.style.transform = "translate(-50%, -50%) scale(1)";
+    }, 100);
+
+    // Heart explosion
+    setTimeout(() => {
+        for(let i=0;i<100;i++){
+            confetti({
+                particleCount: 1,
+                startVelocity: 30,
+                spread: 360,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random()-0.2
+                }
+            });
+        }
+    },500);
 
     setTimeout(() => {
-        bigHeart.remove();
+        popup.remove();
         goToPage(3);
-    }, 800);
+    }, 2200);
 }
 
 function startFireworks() {
